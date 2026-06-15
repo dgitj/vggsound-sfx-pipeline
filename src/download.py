@@ -1,6 +1,9 @@
 import yt_dlp
 import torchaudio
 import tempfile
+import logging
+
+logging.getLogger('yt_dlp').setLevel(logging.CRITICAL)
 
 
 def download_audio(youtube_id, start_seconds):
@@ -17,6 +20,8 @@ def download_audio(youtube_id, start_seconds):
             'outtmpl': f'{tmp_dir}/{youtube_id}.%(ext)s',
             'quiet': True,
             'no_warnings': True,
+            'ignoreerrors': True,
+            'logger': logging.getLogger('yt_dlp'),
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:

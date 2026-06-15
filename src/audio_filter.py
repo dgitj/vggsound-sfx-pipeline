@@ -35,7 +35,6 @@ class AudioFilter:
             except Exception as e:
                 print(f"Skipping {row['youtube_id']}: {e}")
 
-        # Batched inference
         kept_clips = []
         for i in tqdm(range(0, len(downloaded), self.batch_size), desc="Classifying"):
             batch = downloaded[i:i + self.batch_size]
