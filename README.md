@@ -6,7 +6,7 @@ A three-stage filtering pipeline that identifies sound effect clips in the VGGSo
 
 ## The Task
 
-VGGSound contains ~200k YouTube clips across 309 audio categories — a mix of speech, music, and sound effects. The goal is to isolate only the sound effect clips and describe what each one sounds like.
+VGGSound contains ~210k YouTube clips across 310 audio categories — a mix of speech, music, and sound effects. The goal is to isolate only the sound effect clips and describe what each one sounds like.
 
 ---
 
@@ -20,7 +20,7 @@ Raw VGGSound CSV
       ▼
 ┌─────────────────────┐
 │ Stage 1: Metadata   │  Keyword matching on labels
-│ Filter              │  Drops ~40-50% of clips instantly
+│ Filter              │  Drops ~30% of clips instantly
 └─────────────────────┘
       │
       ▼
