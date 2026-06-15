@@ -70,7 +70,7 @@ CLAP was the pragmatic choice for me and it worked well in my evaluations. The t
 
 ## Hardware and Scalability
 
-The demo runs on a single machine (mac mini) after processing all samples in Stage 1, I sampled 1000 samples randomly to demonstrate the feasibility of the following pipeline. The pipeline is embarrasingly parallel and can scale to the full dataset (or larger). For example, on a SLURM cluster batches can be processed in parallel without synchronization.
+The demo runs on a single machine (I used a mac mini) after processing all samples in Stage 1, I sampled 1000 samples randomly to demonstrate the feasibility of the following pipeline. The pipeline is embarrasingly parallel and can scale to the full dataset (or larger). For example, on a SLURM cluster batches can be processed in parallel without synchronization.
 
 Currently, audio downloading in Stage 2 is sequential. Future work should parallelizing downloads e.g., by using a ThreadPoolExecutor.
 
