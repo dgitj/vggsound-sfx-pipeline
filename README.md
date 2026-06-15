@@ -49,7 +49,7 @@ The pipeline processes all samples in the VGGSound dataset. It reads the VGGSoun
 
 ## Stage 2: Audio Filter
 
-For each clip that passes Stage 1, downloads the audio via `yt-dlp` (links that are currently unavailable on YouTube are logged and skipped gracefully without stoppping the pipeline) and runs it through the [Audio Spectrogram Transformer (AST)] a model trained on AudioSet's 527 audio classes.
+For each clip that passes Stage 1, downloads the audio via `yt-dlp` (links that are currently unavailable on YouTube are logged and skipped gracefully without stoppping the pipeline) and runs it through the Audio Spectrogram Transformer (AST) a model trained on AudioSet's 527 audio classes.
 
 Rather than checking only top-k predictions, the pipeline scans all 527 class probabilities. If any class label matching speech or music keywords exceeds the configured threshold (can be tuned in the config file), the clip is discarded. 
 
