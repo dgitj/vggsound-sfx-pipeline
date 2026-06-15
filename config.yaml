@@ -1,0 +1,46 @@
+paths:
+  input: "vggsound.csv"
+  output: "output/sfx_filtered.jsonl"
+  data: "data"
+
+sampling:
+  n_samples: 20
+  random_seed: 42
+
+filtering:
+  keywords_music:
+    - guitar
+    - violin
+    - piano
+    - drums
+    - singing
+    - song
+    - music
+    - orchestra
+    - choir
+    - bass
+    - harmonica
+    - trumpet
+    - saxophone
+    - rap
+    - flute
+  keywords_speech:
+    - talking
+    - conversation
+    - speech
+    - speaking
+    - narrating
+    - lecture
+    - chanting
+    - yodeling
+  speech_threshold: 0.1
+  music_threshold: 0.1
+
+models:
+  stage2: "MIT/ast-finetuned-audioset-10-10-0.4593"
+  stage3: "laion/clap-htsat-unfused"
+
+compute:
+  device: "cpu"
+  batch_size: 32
+  num_workers: 4
